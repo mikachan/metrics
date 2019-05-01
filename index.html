@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lister &amp; Product Page Metrics</title>
+        <link
+            rel="stylesheet"
+            href="node_modules/chart.js/dist/Chart.min.css"
+        />
+    </head>
+
+    <body>
+        <canvas id="myChart" width="200" height="500"></canvas>
+        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+        <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: ["24/04/2019", "30/04/2019"],
+                    datasets: [
+                        {
+                            label: "Performance",
+                            data: [42, 39],
+                            backgroundColor: ["rgba(230,214,253, 0.5)"],
+                            borderColor: ["rgba(89,10,207, 1)"],
+                            borderWidth: 1
+                        },
+                        {
+                            label: "Accessibility",
+                            data: [63, 72],
+                            backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                            borderColor: ["rgba(255, 159, 64, 1)"],
+                            borderWidth: 1
+                        },
+                        {
+                            label: "Best Practices",
+                            data: [86, 79],
+                            backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                            borderColor: ["rgba(255, 159, 64, 1)"],
+                            borderWidth: 1
+                        },
+                        {
+                            label: "SEO",
+                            data: [98, 100],
+                            backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                            borderColor: ["rgba(255, 159, 64, 1)"],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: false
+                                },
+                                stacked: true
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
